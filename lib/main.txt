@@ -1,0 +1,246 @@
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Fraîcheur.',
+//       theme: ThemeData(
+//         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFe84393)),
+//         useMaterial3: true,
+//       ),
+//       home: const WelcomeScreen(), // La page de bienvenue est l'écran initial
+//       debugShowCheckedModeBanner: false,
+//     );
+//   }
+// }
+
+// class WelcomeScreen extends StatelessWidget {
+//   const WelcomeScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Stack(
+//         children: [
+//           Positioned.fill(
+//             child: Image.asset(
+//               'asset/acc.jpg', // Ton image de fond
+//               fit: BoxFit.cover,
+//             ),
+//           ),
+//           Positioned(
+//             top: MediaQuery.of(context).size.height * 0.25,
+//             left: 20,
+//             right: 20,
+//             child: Text(
+//               'Bienvenue Administrateur !',
+//               style: TextStyle(
+//                 fontSize: 28,
+//                 fontWeight: FontWeight.bold,
+//                 color: Theme.of(context).colorScheme.primary,
+//               ),
+//               textAlign: TextAlign.center,
+//             ),
+//           ),
+//           Positioned(
+//             top: MediaQuery.of(context).size.height * 0.35,
+//             left: 40,
+//             right: 40,
+//             child: ElevatedButton(
+//               onPressed: () {
+//                 Navigator.pushReplacement(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => const RootScreen()),
+//                 );
+//               },
+//               style: ElevatedButton.styleFrom(
+//                 backgroundColor: const Color(0xFFe84393),
+//                 foregroundColor: Colors.white,
+//                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+//                 shape: RoundedRectangleBorder(
+//                   borderRadius: BorderRadius.circular(30),
+//                 ),
+//               ),
+//               child: const Text(
+//                 'Accéder à la gestion',
+//                 style: TextStyle(fontSize: 18),
+//               ),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// class RootScreen extends StatefulWidget {
+//   const RootScreen({super.key});
+
+//   @override
+//   State<RootScreen> createState() => _RootScreenState();
+// }
+
+// class _RootScreenState extends State<RootScreen> {
+//   int _selectedIndex = 0;
+
+//   static const List<Widget> _widgetOptions = <Widget>[
+//     DashboardScreen(),
+//     CatalogScreen(),
+//     OrdersScreen(),
+//     PresentationScreen(),
+//   ];
+
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   String _getTitle(int index) {
+//     switch (index) {
+//       case 0:
+//         return 'Tableau de Bord';
+//       case 1:
+//         return 'Gestion du Catalogue';
+//       case 2:
+//         return 'Gestion des Commandes';
+//       case 3:
+//         return 'Présentation';
+//       default:
+//         return 'Fraîcheur.';
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(_getTitle(_selectedIndex)),
+//         backgroundColor: Theme.of(context).colorScheme.primary,
+//         foregroundColor: Colors.white,
+//         leading: IconButton(
+//           icon: const Icon(Icons.arrow_back),
+//           onPressed: () {
+//             Navigator.pushReplacement(
+//               context,
+//               MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+//             );
+//           },
+//         ),
+//       ),
+//       body: Center(
+//         child: _widgetOptions.elementAt(_selectedIndex),
+//       ),
+//       bottomNavigationBar: BottomNavigationBar(
+//         items: const <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.dashboard),
+//             label: 'Tableau de Bord',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.list_alt),
+//             label: 'Catalogue',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.shopping_cart),
+//             label: 'Commandes',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.info),
+//             label: 'Présentation',
+//           ),
+//         ],
+//         currentIndex: _selectedIndex,
+//         selectedItemColor: Theme.of(context).colorScheme.primary,
+//         onTap: _onItemTapped,
+//       ),
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond pour RootScreen
+//     );
+//   }
+// }
+
+// class DashboardScreen extends StatelessWidget {
+//   const DashboardScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       body: Stack(
+//         children: [
+//           Positioned.fill(
+//             child: Image.asset(
+//               'asset/accueil.png', // Ton image de fond pour le Dashboard
+//               fit: BoxFit.cover,
+//             ),
+//           ),
+//           const Center(
+//             child: Text(
+//               'Tableau de Bord',
+//               style: TextStyle(fontSize: 24, color: Colors.white),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// class CatalogScreen extends StatelessWidget {
+//   const CatalogScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       body: const Center(
+//         child: Text(
+//           'Gestion du Catalogue',
+//           style: TextStyle(fontSize: 20, color: Colors.white),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class OrdersScreen extends StatelessWidget {
+//   const OrdersScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       body: const Center(
+//         child: Text(
+//           'Gestion des Commandes',
+//           style: TextStyle(fontSize: 20, color: Colors.white),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class PresentationScreen extends StatelessWidget {
+//   const PresentationScreen({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       body: const Center(
+//         child: Text(
+//           'Contenu de la présentation de la boutique ici...',
+//           style: TextStyle(fontSize: 18, color: Colors.white),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
