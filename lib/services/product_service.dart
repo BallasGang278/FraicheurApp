@@ -1,10 +1,10 @@
 // lib/services/product_service.dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:flutter_application_e5/models/product.dart'; // Assurez-vous que le chemin est correct
+import 'package:flutter_application_e5/models/product.dart'; 
 
 class ProductService {
-  static const String _baseUrl = 'http://localhost/fraicheur/api'; // <-- POUR CHROME
+  static const String _baseUrl = 'http://localhost/fraicheur/api'; 
 
   Future<bool> authenticateAdmin(String email, String password) async {
     final response = await http.post(
@@ -14,7 +14,7 @@ class ProductService {
     );
     if (response.statusCode == 200) {
       final Map<String, dynamic> data = jsonDecode(response.body);
-      return data['success'] == true; // Assurez-vous que votre auth.php renvoie bien {"success": true/false}
+      return data['success'] == true; 
     } else {
       print('Échec de l\'authentification: ${response.statusCode}, Corps: ${response.body}');
       return false;
