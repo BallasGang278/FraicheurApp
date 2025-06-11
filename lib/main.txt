@@ -15,7 +15,7 @@
 //         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFe84393)),
 //         useMaterial3: true,
 //       ),
-//       home: const WelcomeScreen(), // La page de bienvenue est l'écran initial
+//       home: const WelcomeScreen(), 
 //       debugShowCheckedModeBanner: false,
 //     );
 //   }
@@ -31,7 +31,7 @@
 //         children: [
 //           Positioned.fill(
 //             child: Image.asset(
-//               'asset/acc.jpg', // Ton image de fond
+//               'asset/acc.jpg', 
 //               fit: BoxFit.cover,
 //             ),
 //           ),
@@ -161,7 +161,7 @@
 //         selectedItemColor: Theme.of(context).colorScheme.primary,
 //         onTap: _onItemTapped,
 //       ),
-//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond pour RootScreen
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), 
 //     );
 //   }
 // }
@@ -172,12 +172,12 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), 
 //       body: Stack(
 //         children: [
 //           Positioned.fill(
 //             child: Image.asset(
-//               'asset/accueil.png', // Ton image de fond pour le Dashboard
+//               'asset/accueil.png', 
 //               fit: BoxFit.cover,
 //             ),
 //           ),
@@ -199,7 +199,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), 
 //       body: const Center(
 //         child: Text(
 //           'Gestion du Catalogue',
@@ -216,7 +216,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), 
 //       body: const Center(
 //         child: Text(
 //           'Gestion des Commandes',
@@ -233,7 +233,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), // Couleur de fond
+//       backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.8), 
 //       body: const Center(
 //         child: Text(
 //           'Contenu de la présentation de la boutique ici...',
