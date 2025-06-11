@@ -15,19 +15,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fraicheur Admin App',
       theme: ThemeData(
-        // Couleur principale de ton thème (pour les éléments Material Design par défaut)
-        primaryColor: const Color(0xFFE84393), // Ta couleur personnalisée
-        // primarySwatch est souvent utilisé pour générer des nuances,
-        // mais primaryColor/accentColor sont plus directs pour ta couleur exacte.
-        // On peut laisser primarySwatch en rose ou le supprimer si tu ne veux que ta couleur.
-        // Colors.pink est un exemple, si tu n'utilises pas ses nuances, tu peux le laisser ou le retirer.
+        
+        primaryColor: const Color(0xFFE84393), 
         primarySwatch: Colors.pink, 
 
-        // Définit la couleur de fond par défaut pour les ElevatedButtons
+        
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFFE84393), // Couleur de fond du bouton
-            foregroundColor: Colors.white, // Couleur du texte du bouton
+            backgroundColor: const Color(0xFFE84393),
+            foregroundColor: Colors.white, 
           ),
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
