@@ -1,6 +1,6 @@
 // lib/screens/presentation_screen.dart
 import 'package:flutter/material.dart';
-import 'root_screen.dart'; // Importez le RootScreen
+import 'root_screen.dart'; 
 
 class PresentationScreen extends StatelessWidget {
   const PresentationScreen({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class PresentationScreen extends StatelessWidget {
             // Image de fond
             Positioned.fill(
               child: Image.asset(
-                'asset/accueil.jpg', // Assure-toi que le nom est bon (jpg ou png)
+                'asset/accueil.jpg', 
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return const Center(
@@ -27,23 +27,23 @@ class PresentationScreen extends StatelessWidget {
                 },
               ),
             ),
-            // Contenu (texte et bouton) superposé
-            Align( // Utilise Align pour un positionnement précis de l'ensemble
-              alignment: Alignment.topCenter, // Aligne en haut au centre
+            
+            Align( 
+              alignment: Alignment.topCenter,
               child: Padding(
-                padding: const EdgeInsets.only(top: 150), // Descend le contenu de 150 pixels du haut (ajuste cette valeur)
+                padding: const EdgeInsets.only(top: 150), 
                 child: Column(
-                  mainAxisSize: MainAxisSize.min, // La colonne prend juste l'espace nécessaire
+                  mainAxisSize: MainAxisSize.min, 
                   children: [
                     // Phrase de bienvenue
                     const Text(
                       'Bienvenue, Administrateur !',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Colors.white, // Couleur du texte pour qu'il ressorte sur l'image
+                        color: Colors.white, 
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        shadows: [ // Petite ombre pour améliorer la lisibilité
+                        shadows: [ 
                           Shadow(
                             offset: Offset(2.0, 2.0),
                             blurRadius: 3.0,
@@ -52,8 +52,7 @@ class PresentationScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 20), // Espace entre le texte et le bouton
-                    // Bouton "Démarrer l'administration"
+                    const SizedBox(height: 20), 
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pushReplacement(
