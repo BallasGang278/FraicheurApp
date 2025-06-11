@@ -1,4 +1,4 @@
-// Exemple pour OrdersScreen (adaptez pour DashboardScreen et PresentationScreen)
+
 import 'package:flutter/material.dart';
 
 class OrdersScreen extends StatelessWidget {
@@ -9,7 +9,7 @@ class OrdersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gestion des Commandes'),
-        backgroundColor: const Color(0xFFE84393), // Couleur de votre barre d'application
+        backgroundColor: const Color(0xFFE84393),
       ),
       body: const Center(
         child: Text('Contenu de la page Commandes à venir.'),
