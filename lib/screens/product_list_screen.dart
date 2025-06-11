@@ -26,14 +26,14 @@ class _ProductListScreenState extends State<ProductListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gestion du Catalogue'),
-        backgroundColor: const Color(0xFFE84393), // <-- Ta couleur
+        backgroundColor: const Color(0xFFE84393), 
         centerTitle: true,
       ),
       body: FutureBuilder<List<Product>>(
         future: _productsFuture,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator(color: Color(0xFFE84393))); // <-- Ta couleur
+            return const Center(child: CircularProgressIndicator(color: Color(0xFFE84393))); 
           } else if (snapshot.hasError) {
             return Center(child: Text('Erreur: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
@@ -53,12 +53,10 @@ class _ProductListScreenState extends State<ProductListScreen> {
                 return ProductItem(
                   product: product,
                   onEdit: () {
-                    // Logique pour modifier un produit
-                    // debugPrint('Modifier ${product.designation}');
+                    
                   },
                   onDelete: () {
-                    // Logique pour supprimer un produit
-                    // debugPrint('Supprimer ${product.designation}');
+                    
                   },
                 );
               },
@@ -68,10 +66,9 @@ class _ProductListScreenState extends State<ProductListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Logique pour ajouter un nouveau produit
-          // debugPrint('Ajouter un nouveau produit');
+          
         },
-        backgroundColor: const Color(0xFFE84393), // <-- Ta couleur
+        backgroundColor: const Color(0xFFE84393), 
         child: const Icon(Icons.add, color: Colors.white),
       ),
     );
