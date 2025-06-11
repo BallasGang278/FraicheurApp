@@ -1,6 +1,6 @@
 // lib/widgets/product_item.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_application_e5/models/product.dart'; // Assurez-vous que le chemin est correct
+import 'package:flutter_application_e5/models/product.dart'; 
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -25,17 +25,16 @@ class ProductItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Zone de l'image
+          
           Expanded(
             child: ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(10.0)),
-              // Utilisez Image.network pour charger l'image depuis l'URL de l'API
-              // Assurez-vous que product.imageUrl contient bien l'URL complète
+              
               child: Image.network(
-                product.imageUrl, // C'est ici que l'URL complète de l'image est utilisée
+                product.imageUrl, 
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
-                  // Placeholder en cas d'erreur de chargement de l'image
+                  
                   return Container(
                     color: Colors.grey[200],
                     child: Icon(
@@ -63,16 +62,16 @@ class ProductItem extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 4.0),
-                // Affichage du prix original (barré)
+                
                 Text(
-                  '${product.price.toStringAsFixed(2)} €', // Utilise product.price
+                  '${product.price.toStringAsFixed(2)} €', 
                   style: TextStyle(
                     fontSize: 14,
                     color: product.reduction > 0 ? Colors.grey : Colors.black,
                     decoration: product.reduction > 0 ? TextDecoration.lineThrough : TextDecoration.none,
                   ),
                 ),
-                // Affichage du prix réduit
+               
                 if (product.reduction > 0)
                   Padding(
                     padding: const EdgeInsets.only(left: 8.0),
@@ -85,7 +84,7 @@ class ProductItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                // Affichage du pourcentage de réduction
+                
                 if (product.reduction > 0)
                   Text(
                     '-${product.reduction.toStringAsFixed(0)}%',
