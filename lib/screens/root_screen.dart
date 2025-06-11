@@ -14,10 +14,10 @@ class RootScreen extends StatefulWidget {
 class _RootScreenState extends State<RootScreen> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    const ProductListScreen(),    // Index 0 : Catalogue
-    const OrdersScreen(),         // Index 1 : Commandes
-    const DashboardScreen(),      // Index 2 : Tableau de bord
-    const PresentationScreen(),   // Index 3 : Site Web
+    const ProductListScreen(),    
+    const OrdersScreen(),        
+    const DashboardScreen(),      
+    const PresentationScreen(),   
   ];
 
   void _onItemTapped(int index) {
