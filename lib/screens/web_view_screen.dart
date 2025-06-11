@@ -1,6 +1,6 @@
 // lib/screens/web_view_screen.dart
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart'; // Importez le package
+import 'package:webview_flutter/webview_flutter.dart'; 
 
 class WebViewScreen extends StatefulWidget {
   final String url;
@@ -9,7 +9,7 @@ class WebViewScreen extends StatefulWidget {
   const WebViewScreen({
     Key? key,
     required this.url,
-    this.title = 'Site E-commerce', // Titre par défaut
+    this.title = 'Site E-commerce', 
   }) : super(key: key);
 
   @override
@@ -23,14 +23,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
   @override
   void initState() {
     super.initState();
-    // Création du contrôleur WebView
+    
     _controller = WebViewController()
-      ..setJavaScriptMode(JavaScriptMode.unrestricted) // Active JS
-      ..setBackgroundColor(const Color(0x00000000)) // Fond transparent
+      ..setJavaScriptMode(JavaScriptMode.unrestricted) 
+      ..setBackgroundColor(const Color(0x00000000)) 
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {
-            // Afficher la progression du chargement
+            
             debugPrint('WebView is loading (progress: $progress%)');
           },
           onPageStarted: (String url) {
@@ -55,17 +55,13 @@ class _WebViewScreenState extends State<WebViewScreen> {
             ''');
           },
           onNavigationRequest: (NavigationRequest request) {
-            // Optionnel: Bloquer certaines navigations si nécessaire
-            // if (request.url.startsWith('https://www.youtube.com/')) {
-            //   debugPrint('blocking navigation to ${request.url}');
-            //   return NavigationDecision.prevent;
-            // }
+            
             debugPrint('allowing navigation to ${request.url}');
             return NavigationDecision.navigate;
           },
         ),
       )
-      ..loadRequest(Uri.parse(widget.url)); // Charge l'URL passée en paramètre
+      ..loadRequest(Uri.parse(widget.url)); 
   }
 
   @override
@@ -87,7 +83,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
           WebViewWidget(controller: _controller),
           if (_isLoading)
             const Center(
-              child: CircularProgressIndicator(), // Indique que le WebView charge
+              child: CircularProgressIndicator(), 
             ),
         ],
       ),
