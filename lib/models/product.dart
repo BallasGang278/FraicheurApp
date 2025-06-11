@@ -1,6 +1,6 @@
 // lib/widgets/product_item.dart
 import 'package:flutter/material.dart';
-import 'package:flutter_application_e5/models/product.dart'; // Assurez-vous que le chemin est correct
+import 'package:flutter_application_e5/models/product.dart'; 
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -29,7 +29,7 @@ class ProductItem extends StatelessWidget {
             child: ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(10.0)),
               child: Image.network(
-                product.imageUrl, // C'est ici que l'URL complète de l'image est utilisée
+                product.imageUrl, 
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
@@ -60,7 +60,7 @@ class ProductItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 4.0),
                 Text(
-                  '${product.price.toStringAsFixed(2)} €', // Utilise product.price
+                  '${product.price.toStringAsFixed(2)} €', 
                   style: TextStyle(
                     fontSize: 14,
                     color: product.reduction > 0 ? Colors.grey : Colors.black,
