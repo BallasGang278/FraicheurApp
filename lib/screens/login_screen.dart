@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Connexion Administrateur'),
-        backgroundColor: const Color(0xFFE84393), // <-- Ta couleur
+        backgroundColor: const Color(0xFFE84393), 
         centerTitle: true,
       ),
       body: Center(
@@ -64,11 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Si tu as un logo spécifique, assure-toi qu'il est dans assets/images/logo.png
-              // et que pubspec.yaml est configuré pour les assets.
-              // Sinon, tu peux commenter la ligne suivante.
+              
               Image.asset(
-                'assets/images/logo.png', // Chemin vers ton logo (site.png est dans assets)
+                'assets/images/logo.png', 
                 height: 150,
                 errorBuilder: (context, error, stackTrace) {
                   return const Icon(Icons.person, size: 100, color: Colors.grey);
@@ -84,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  prefixIcon: const Icon(Icons.email, color: Color(0xFFE84393)), // <-- Ta couleur
+                  prefixIcon: const Icon(Icons.email, color: Color(0xFFE84393)),
                   fillColor: Colors.white,
                   filled: true,
                   contentPadding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 20.0),
@@ -103,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.0),
                   ),
-                  prefixIcon: const Icon(Icons.lock, color: Color(0xFFE84393)), // <-- Ta couleur
+                  prefixIcon: const Icon(Icons.lock, color: Color(0xFFE84393)), 
                   fillColor: Colors.white,
                   filled: true,
                   contentPadding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 20.0),
@@ -114,11 +112,11 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 30),
 
               _isLoading
-                  ? const Center(child: CircularProgressIndicator(color: Color(0xFFE84393))) // <-- Ta couleur
+                  ? const Center(child: CircularProgressIndicator(color: Color(0xFFE84393)))
                   : ElevatedButton(
                       onPressed: _login,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFE84393), // <-- Ta couleur
+                        backgroundColor: const Color(0xFFE84393), 
                         padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12.0),
